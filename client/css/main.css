@@ -1,0 +1,37 @@
+*{margin:0;padding:0;}
+body {
+    font-family: Cambria, Georgia;
+}
+#loaderBkg{
+    position:absolute;
+    height:100%;
+    width:100%;
+    background-color: #e8e8e8;
+}
+#loaderBkg img{
+    position:relative;
+    left: calc(50% - 200px);
+    top: calc(50% - 100px);
+}
+footer {
+	padding: 0;
+	font-size: 12px;
+	font-weight: 500;
+	letter-spacing: 1px;
+	color: #000;
+	text-align: center;
+	border-top: 1px solid #CECECE;
+    padding-top:5px;
+    background: #e8e8e8;
+}
+#body .main-container{
+    margin-bottom: 90px; 
+    margin-top: 65px;
+}
+.btn-primary.btn-submit:disabled{
+    background-color: #337ab7;
+    color:#fff;
+}
+.form-horizontal label{
+    color:#777;
+}
