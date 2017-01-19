@@ -129,7 +129,7 @@ gulp.task('build:dev', function(done) {
 });
 
 gulp.task('serve:dev', function(done) {
-    runSequence('build:dev', ['connect:dev', 'watch'], done);
+    runSequence('build:dev', ['connect:dev'], done);
 });
 
 gulp.task('connect:prod', function() {
@@ -145,7 +145,7 @@ gulp.task('connect:dev', function() {
     plugins.connect.server({
         root: [paths.dev, './'],
         port: 3000,
-        livereload: true,
+        livereload: false,
         fallback: paths.dev + '/index.html'
     });
 });
