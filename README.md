@@ -1,9 +1,6 @@
 # Weatherman
-<<<<<<< HEAD
 Application built for weatherman in Angular2
 =======
-
-## Application built for weatherman to check out Angular2
 
 ### Steps to install
 
@@ -17,5 +14,3 @@ Application built for weatherman in Angular2
 4. npm start (prod gulp tasks have to be investigated and they mess up the CSS from vendors while minification, hence they dont technically work for the time being)
 
 5. Good to have test cases written, better components, server in express rather than a serve static and of course better UI can cleaner code.
-
->>>>>>> f33d0eef7dc1ba2b71a740cee7db8af1911c7d3c
