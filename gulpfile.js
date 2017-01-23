@@ -7,6 +7,11 @@ var gulp = require('gulp'),
     plugins = require('gulp-load-plugins')({
         lazy: true
     });
+var cors = function (req, res, next) {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With');
+  next();
+};
 
 var tsProject = plugins.typescript.createProject('tsconfig.json');
 
@@ -137,6 +142,9 @@ gulp.task('connect:prod', function() {
         root: paths.prod,
         port: 5000,
         livereload: true,
+        middleware: function () {
+            return [cors];
+        },
         fallback: paths.prod + '/index.html'
     });
 });
@@ -146,6 +154,9 @@ gulp.task('connect:dev', function() {
         root: [paths.dev, './'],
         port: process.env.PORT || 5000,
         livereload: false,
+        middleware: function () {
+            return [cors];
+        },
         fallback: paths.dev + '/index.html'
     });
 });
