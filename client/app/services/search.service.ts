@@ -6,7 +6,7 @@ import 'rxjs/add/operator/map';
 import {Resultlist} from '../models/result.list';
 @Injectable()
 export class SearchService {
-  private searchUrl = '//api.openweathermap.org/data/2.5/forecast/daily?q=';  // URL to web API
+  private searchUrl = 'http://api.openweathermap.org/data/2.5/forecast/daily?q=';  // URL to web API
   public cityName = '';
   private appId = '&appid=32eab09ba40654398b03b34e7eb00d46&units=metric&cnt=5&callback=JSONP_CALLBACK'; // App Key & unit
   private searchUrlfinal = '';
