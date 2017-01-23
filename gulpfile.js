@@ -4,15 +4,10 @@ var gulp = require('gulp'),
     runSequence = require('run-sequence'),
     htmlMinifier = require('html-minifier'),
     inlineNg2Template = require('gulp-inline-ng2-template'),
+    cors = require('cors'),
     plugins = require('gulp-load-plugins')({
         lazy: true
     });
-var cors = function (req, res, next) {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
-  res.header('Access-Control-Allow-Headers', 'Content-Type');
-  next();
-};
 
 var tsProject = plugins.typescript.createProject('tsconfig.json');
 
@@ -144,7 +139,7 @@ gulp.task('connect:prod', function() {
         port: 5000,
         livereload: true,
         middleware: function () {
-            return [cors];
+            return [cors()];
         },
         fallback: paths.prod + '/index.html'
     });
@@ -156,7 +151,7 @@ gulp.task('connect:dev', function() {
         port: process.env.PORT || 5000,
         livereload: false,
         middleware: function () {
-            return [cors];
+            return [cors()];
         },
         fallback: paths.dev + '/index.html'
     });
