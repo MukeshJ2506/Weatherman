@@ -8,7 +8,7 @@ import {Resultlist} from '../models/result.list';
 export class SearchService {
   private searchUrl = 'http://api.openweathermap.org/data/2.5/forecast/daily?q=';  // URL to web API
   public cityName = '';
-  private appId = '&appid=32eab09ba40654398b03b34e7eb00d46&units=metric'; // App Key & unit
+  private appId = '&appid=32eab09ba40654398b03b34e7eb00d46&units=metric&cnt=5'; // App Key & unit
   private searchUrlfinal = '';
   constructor (private http: Http) {}
   getWeather (): Observable<Resultlist> {
