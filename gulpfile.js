@@ -144,7 +144,7 @@ gulp.task('connect:prod', function() {
 gulp.task('connect:dev', function() {
     plugins.connect.server({
         root: [paths.dev, './'],
-        port: 5000,
+        port: process.env.PORT || 5000,
         livereload: false,
         fallback: paths.dev + '/index.html'
     });
